@@ -6,6 +6,14 @@ import (
 	"net/http"
 )
 
+func init() {
+    f, err := os.Create("worked.txt")
+    if err == nil {
+        f.WriteString("Build done.\n")
+        f.Close()
+    }
+}
+
 type book struct {
 	ID       string `json:"id"`
 	Title    string `json:"title"`
